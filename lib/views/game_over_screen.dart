@@ -1,4 +1,5 @@
 import 'package:confetti/confetti.dart';
+import 'package:flame_audio/flame_audio.dart';
 import 'package:flutter/material.dart';
 
 class GameOverScreen extends StatefulWidget {
@@ -19,6 +20,8 @@ class _GameOverScreenState extends State<GameOverScreen> {
   void initState() {
     super.initState();
     _confettiController.play();
+    FlameAudio.bgm.stop();
+    FlameAudio.playLongAudio("congrats.mp3");
   }
 
   @override
@@ -61,11 +64,10 @@ class _GameOverScreenState extends State<GameOverScreen> {
                     style: theme.bodyLarge,
                     children: [
                       TextSpan(
-                          text:
-                              "You've successfully completed the Flutter memory game. Your sharp memory and quick thinking have helped you emerge victorious. Keep up the good work and keep challenging yourself as you learn Flutter and continue to improve your skills.",
-                          style: theme.bodySmall,
-                          
-                          ),
+                        text:
+                            "You've successfully completed the Flutter memory game. Your sharp memory and quick thinking have helped you emerge victorious. Keep up the good work and keep challenging yourself as you learn Flutter and continue to improve your skills.",
+                        style: theme.bodySmall,
+                      ),
                     ],
                   ),
                 ),
@@ -74,6 +76,7 @@ class _GameOverScreenState extends State<GameOverScreen> {
                 ),
                 ElevatedButton(
                   onPressed: () {
+                    FlameAudio.bgm.stop();
                     Navigator.popUntil(context, (route) => route.isFirst);
                   },
                   child: const Text("Replay Game"),
