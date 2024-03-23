@@ -193,7 +193,7 @@ class _MyFlipCardGameState extends State<MyFlipCardGame> {
                                   image: const DecorationImage(
                                     fit: BoxFit.cover,
                                     image: AssetImage(
-                                      "assets/images/image_cover.jpg",
+                                      "assets/images/image_cover.png",
                                     ),
                                   ),
                                 ),
