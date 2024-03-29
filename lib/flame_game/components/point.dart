@@ -14,10 +14,10 @@ class Point extends SpriteAnimationComponent
   @override
   Future<void> onLoad() async {
     animation = await game.loadSpriteAnimation(
-      'ember.png',
+      'burger.png',
       SpriteAnimationData.sequenced(
         amount: 4,
-        textureSize: Vector2.all(16),
+        textureSize: Vector2.all(50),
         stepTime: 0.15,
       ),
     );
