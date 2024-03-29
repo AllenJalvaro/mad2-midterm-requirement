@@ -21,7 +21,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     required this.addScore,
     required this.resetScore,
     super.position,
-  }) : super(size: Vector2.all(150), anchor: Anchor.center, priority: 1);
+  }) : super(size: Vector2.all(300), anchor: Anchor.centerLeft, priority: 1);
 
   final void Function({int amount}) addScore;
   final VoidCallback resetScore;
@@ -31,7 +31,7 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
   double _gravityVelocity = 0;
 
   // The maximum length that the player can jump. Defined in virtual pixels.
-  final double _jumpLength = 600;
+  final double _jumpLength = 800;
 
   // Whether the player is currently in the air, this can be used to restrict
   // movement for example.
@@ -50,10 +50,10 @@ class Player extends SpriteAnimationGroupComponent<PlayerState>
     // This defines the different animation states that the player can be in.
     animations = {
       PlayerState.running: await game.loadSpriteAnimation(
-        'dash/dash_running.png',
+        'dash/test.png',
         SpriteAnimationData.sequenced(
           amount: 4,
-          textureSize: Vector2.all(16),
+          textureSize: Vector2.all(200),
           stepTime: 0.15,
         ),
       ),
