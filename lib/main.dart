@@ -1,30 +1,68 @@
+import 'package:flame/flame.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_memory_game/views/start_game_screen.dart';
-import 'package:flutter/services.dart';
-import 'package:flame_audio/flame_audio.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nes_ui/nes_ui.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+import 'router.dart';
+import 'app_lifecycle/app_lifecycle.dart';
+import 'audio/audio_controller.dart';
+import 'player_progress/player_progress.dart';
+import 'settings/settings.dart';
+import 'style/palette.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Flame.device.setLandscape();
+  await Flame.device.fullScreen();
+  runApp(const MyGame());
 }
 
-class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+class MyGame extends StatelessWidget {
+  const MyGame({super.key});
 
-  @override
-  _MyAppState createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Memory Game',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        fontFamily: "Game",
-        primarySwatch: Colors.blue,
+    return AppLifecycleObserver(
+      child: MultiProvider(
+        providers: [
+          Provider(create: (context) => Palette()),
+          ChangeNotifierProvider(create: (context) => PlayerProgress()),
+          Provider(create: (context) => SettingsController()),
+          // Set up audio.
+          ProxyProvider2<SettingsController, AppLifecycleStateNotifier,
+              AudioController>(
+            // Ensures that music starts immediately.
+            lazy: false,
+            create: (context) => AudioController(),
+            update: (context, settings, lifecycleNotifier, audio) {
+              audio!.attachDependencies(lifecycleNotifier, settings);
+              return audio;
+            },
+            dispose: (context, audio) => audio.dispose(),
+          ),
+        ],
+        child: Builder(builder: (context) {
+          final palette = context.watch<Palette>();
+
+          return MaterialApp.router(
+            title: 'Endless Runner',
+            theme: flutterNesTheme().copyWith(
+              colorScheme: ColorScheme.fromSeed(
+                seedColor: palette.seed.color,
+                surface: palette.backgroundMain.color,
+              ),
+              textTheme: GoogleFonts.pressStart2pTextTheme().apply(
+                bodyColor: palette.text.color,
+                displayColor: palette.text.color,
+              ),
+            ),
+            routeInformationProvider: router.routeInformationProvider,
+            routeInformationParser: router.routeInformationParser,
+            routerDelegate: router.routerDelegate,
+          );
+        }),
       ),
-      home: const StartGameScreen(),
     );
   }
 }
