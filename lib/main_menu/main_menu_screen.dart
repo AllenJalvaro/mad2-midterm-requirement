@@ -1,4 +1,8 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
@@ -19,23 +23,24 @@ class MainMenuScreen extends StatelessWidget {
     final audioController = context.watch<AudioController>();
 
     return Scaffold(
-      backgroundColor: palette.backgroundMain.color,
+      backgroundColor: Colors.white,
       body: ResponsiveScreen(
         squarishMainArea: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/banner.png',
+                'assets/images/jollibee_banner.png',
                 filterQuality: FilterQuality.none,
+                height: 200,
               ),
               _gap,
               Transform.rotate(
-                angle: -0.1,
+                angle: 0,
                 child: ConstrainedBox(
                   constraints: const BoxConstraints(maxWidth: 500),
                   child: const Text(
-                    'A Flutter game template.',
+                    'Kaibigan, Tara, Laro Tayo!',
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontFamily: 'Press Start 2P',
@@ -56,12 +61,18 @@ class MainMenuScreen extends StatelessWidget {
                 audioController.playSfx(SfxType.buttonTap);
                 GoRouter.of(context).go('/play');
               },
-              child: const Text('Play'),
+              child: const Text(
+                'Play',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             _gap,
             WobblyButton(
               onPressed: () => GoRouter.of(context).push('/settings'),
-              child: const Text('Settings'),
+              child: const Text(
+                'Settings',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             _gap,
             Padding(
@@ -77,7 +88,12 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
             _gap,
-            const Text('Built with Flame'),
+            const Text(
+              'by Allen James Alvaro, Bea Conag, Justin Gerald Loleng, and Hernani Domingo',
+              style: TextStyle(
+                fontSize: 10,
+              ),
+            ),
           ],
         ),
       ),

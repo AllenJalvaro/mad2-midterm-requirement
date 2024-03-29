@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
     final palette = context.watch<Palette>();
 
     return Scaffold(
-      backgroundColor: palette.backgroundSettings.color,
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           children: [
@@ -42,12 +42,12 @@ class SettingsScreen extends StatelessWidget {
                     ),
                     _gap,
                     const _NameChangeLine(
-                      'Name',
+                      'Jolliname',
                     ),
                     ValueListenableBuilder<bool>(
                       valueListenable: settings.soundsOn,
                       builder: (context, soundsOn, child) => _SettingsLine(
-                        'Sound FX',
+                        'Tunog',
                         Icon(soundsOn ? Icons.graphic_eq : Icons.volume_off),
                         onSelected: () => settings.toggleSoundsOn(),
                       ),
@@ -55,13 +55,13 @@ class SettingsScreen extends StatelessWidget {
                     ValueListenableBuilder<bool>(
                       valueListenable: settings.musicOn,
                       builder: (context, musicOn, child) => _SettingsLine(
-                        'Music',
+                        'Musika',
                         Icon(musicOn ? Icons.music_note : Icons.music_off),
                         onSelected: () => settings.toggleMusicOn(),
                       ),
                     ),
                     _SettingsLine(
-                      'Reset progress',
+                      'I-reset ang progreso',
                       const Icon(Icons.delete),
                       onSelected: () {
                         context.read<PlayerProgress>().reset();
@@ -82,7 +82,7 @@ class SettingsScreen extends StatelessWidget {
               onPressed: () {
                 GoRouter.of(context).pop();
               },
-              child: const Text('Back'),
+              child: const Text('Bumalik'),
             ),
             _gap,
           ],
@@ -101,31 +101,33 @@ class _NameChangeLine extends StatelessWidget {
   Widget build(BuildContext context) {
     final settings = context.watch<SettingsController>();
 
-    return InkResponse(
-      highlightShape: BoxShape.rectangle,
-      onTap: () => showCustomNameDialog(context),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(title,
-                style: const TextStyle(
-                  fontFamily: 'Press Start 2P',
-                  fontSize: 20,
-                )),
-            const Spacer(),
-            ValueListenableBuilder(
-              valueListenable: settings.playerName,
-              builder: (context, name, child) => Text(
-                '‘$name’',
-                style: const TextStyle(
-                  fontFamily: 'Press Start 2P',
-                  fontSize: 20,
+    return SingleChildScrollView(
+      child: InkResponse(
+        highlightShape: BoxShape.rectangle,
+        onTap: () => showCustomNameDialog(context),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(title,
+                  style: const TextStyle(
+                    fontFamily: 'Press Start 2P',
+                    fontSize: 20,
+                  )),
+              const Spacer(),
+              ValueListenableBuilder(
+                valueListenable: settings.playerName,
+                builder: (context, name, child) => Text(
+                  '‘$name’',
+                  style: const TextStyle(
+                    fontFamily: 'Press Start 2P',
+                    fontSize: 20,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

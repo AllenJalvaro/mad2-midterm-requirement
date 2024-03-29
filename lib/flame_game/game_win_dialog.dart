@@ -31,38 +31,44 @@ class GameWinDialog extends StatelessWidget {
         width: 420,
         height: 300,
         backgroundColor: palette.backgroundPlaySession.color,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Well done!',
-              style: Theme.of(context).textTheme.headlineMedium,
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            Text(
-              'You completed level ${level.number} in $levelCompletedIn seconds.',
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 16),
-            if (level.number < gameLevels.length) ...[
-              NesButton(
-                onPressed: () {
-                  context.go('/play/session/${level.number + 1}');
-                },
-                type: NesButtonType.primary,
-                child: const Text('Next level'),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/horaay.gif',
+                height: 100,
+              ),
+              Text(
+                'Ang galing!',
+                style: Theme.of(context).textTheme.headlineMedium,
+                textAlign: TextAlign.center,
               ),
               const SizedBox(height: 16),
+              Text(
+                'Nakompleto mo lebel ${level.number} sa loob lamang ng $levelCompletedIn segundo.',
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 16),
+              if (level.number < gameLevels.length) ...[
+                NesButton(
+                  onPressed: () {
+                    context.go('/play/session/${level.number + 1}');
+                  },
+                  type: NesButtonType.primary,
+                  child: const Text('Susunod na lebel'),
+                ),
+                const SizedBox(height: 16),
+              ],
+              NesButton(
+                onPressed: () {
+                  context.go('/play');
+                },
+                type: NesButtonType.normal,
+                child: const Text('Pagpili ng lebel'),
+              ),
             ],
-            NesButton(
-              onPressed: () {
-                context.go('/play');
-              },
-              type: NesButtonType.normal,
-              child: const Text('Level selection'),
-            ),
-          ],
+          ),
         ),
       ),
     );

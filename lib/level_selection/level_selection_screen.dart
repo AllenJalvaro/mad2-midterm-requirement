@@ -22,7 +22,7 @@ class LevelSelectionScreen extends StatelessWidget {
         Theme.of(context).textTheme.bodyMedium?.copyWith(height: 1.4);
 
     return Scaffold(
-      backgroundColor: palette.backgroundLevelSelection.color,
+      backgroundColor: Colors.red,
       body: Column(
         children: [
           Padding(
@@ -32,8 +32,8 @@ class LevelSelectionScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Select level',
-                    style: Theme.of(context).textTheme.headlineSmall,
+                    'Pumili ng lebel',
+                    style: TextStyle(color: Colors.white, fontSize: 30),
                   ),
                   const SizedBox(width: 16),
                   NesButton(
@@ -68,13 +68,15 @@ class LevelSelectionScreen extends StatelessWidget {
                       },
                       leading: Text(
                         level.number.toString(),
-                        style: levelTextStyle,
+                        style: TextStyle(color: Colors.white),
                       ),
                       title: Row(
                         children: [
                           Text(
-                            'Level #${level.number}',
-                            style: levelTextStyle,
+                            'Lebel #${level.number}',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                           if (playerProgress.levels.length <
                               level.number - 1) ...[
@@ -85,7 +87,9 @@ class LevelSelectionScreen extends StatelessWidget {
                             const SizedBox(width: 50),
                             Text(
                               '${playerProgress.levels[level.number - 1]}s',
-                              style: levelTextStyle,
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
                             ),
                           ],
                         ],
@@ -100,7 +104,10 @@ class LevelSelectionScreen extends StatelessWidget {
             onPressed: () {
               GoRouter.of(context).go('/');
             },
-            child: const Text('Back'),
+            child: const Text(
+              'Bumalik',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
           const SizedBox(height: 30),
         ],
