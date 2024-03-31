@@ -28,7 +28,7 @@ class MainMenuScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/takboBeelogo.png',
+                'assets/images/logo.png',
                 filterQuality: FilterQuality.none,
                 height: 200,
               ),
