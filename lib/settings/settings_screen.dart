@@ -4,7 +4,6 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 
 import '../style/wobbly_button.dart';
-import '../style/palette.dart';
 import 'custom_name_dialog.dart';
 import 'settings.dart';
 
@@ -16,7 +15,6 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final settings = context.watch<SettingsController>();
-    final palette = context.watch<Palette>();
 
     return Scaffold(
       backgroundColor: Colors.white,

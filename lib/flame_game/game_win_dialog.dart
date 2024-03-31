@@ -1,3 +1,5 @@
+import 'package:endless_runner/audio/audio_controller.dart';
+
 import '../level_selection/levels.dart';
 import '../style/palette.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +28,8 @@ class GameWinDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final palette = context.read<Palette>();
+    final audioController = context.read<AudioController>();
+
     return Center(
       child: NesContainer(
         width: 420,
