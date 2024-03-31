@@ -1,5 +1,7 @@
 # TakboBee
 
+![takboBeelogo](https://github.com/AllenJalvaro/mad2-midterm-requirement/assets/111575302/c7242114-1bd0-4673-98b2-3a7acc0aca0b)
+
 "TakboBee" is a fun endless runner game made with Flutter. Guide Jollibee, dodge obstacles, and collect yumburgers along the way. With easy controls and colorful graphics, it's perfect for everyone. Get ready for quick, addictive fun on your mobile!
 
 
