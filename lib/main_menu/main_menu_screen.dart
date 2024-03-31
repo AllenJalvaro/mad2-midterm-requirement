@@ -60,7 +60,7 @@ class MainMenuScreen extends StatelessWidget {
                 GoRouter.of(context).go('/play');
               },
               child: const Text(
-                'Play',
+                'Laro na!',
                 style: TextStyle(color: Colors.white),
               ),
             ),
@@ -68,7 +68,7 @@ class MainMenuScreen extends StatelessWidget {
             WobblyButton(
               onPressed: () => GoRouter.of(context).push('/settings'),
               child: const Text(
-                'Settings',
+                'Mga setting',
                 style: TextStyle(color: Colors.white),
               ),
             ),
