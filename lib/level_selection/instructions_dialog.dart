@@ -60,14 +60,14 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       Flexible(
                         flex: 3,
                         child: SizedBox(
-                          width: 100,
-                          height: 100,
+                          width: 200,
+                          height: 200,
                           child: SpriteAnimationWidget.asset(
-                            path: 'dash/dash_spritesheet.png',
+                            path: 'dash/test2.png',
                             data: SpriteAnimationData.sequenced(
                               amount: 3,
                               stepTime: 0.15,
-                              textureSize: Vector2.all(16),
+                              textureSize: Vector2.all(180),
                             ),
                           ),
                         ),
@@ -76,7 +76,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'Tap/click on the screen to jump in that direction, tap again to double jump.',
+                          'Tap/click sa screen para tumalon sa direction na iyon, tap ulit para sa double jump.',
                         ),
                       ),
                     ],
@@ -87,7 +87,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 7,
                         child: Text(
-                          'You have to save as many Embers as possible to clear the level.',
+                          'Kailangan mong kainin ang mga Yumburger para pumunta sa next level',
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -97,11 +97,11 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                           width: 60,
                           height: 60,
                           child: SpriteAnimationWidget.asset(
-                            path: 'ember.png',
+                            path: 'burger.png',
                             data: SpriteAnimationData.sequenced(
                               amount: 4,
                               stepTime: 0.15,
-                              textureSize: Vector2.all(16),
+                              textureSize: Vector2.all(50),
                             ),
                           ),
                         ),
@@ -124,7 +124,7 @@ class _InstructionsDialogState extends State<InstructionsDialog> {
                       const Flexible(
                         flex: 6,
                         child: Text(
-                          'Watch out for these, they will make you drop your Embers.',
+                          'Iwasan mo ang mga ito, babawsan nila ang Yumburger na kinain mo!',
                         ),
                       )
                     ],
