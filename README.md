@@ -35,8 +35,11 @@ TakboBee's mechanic was chosen to feature Jollibee-themed gameplay because it's 
 
 Jollibee is the friendly mascot and it becomes a symbol of Filipino positivity and joy it shows Filipino spirit of hospitality.  Bees are known as a hard work and have unity this qualities that reflect Filipino values like having determination and generosity. Jollibee menu also offers a mix of Filipino flavors and international favorites, catering to the diverse tastes of Filipino consumers Alongside classics like burgers and fries, you'll find Filipino-inspired dishes like Chickenjoy (fried chicken), Jolly Spaghetti (sweet-style spaghetti), and palabok(garlic sauce and sauteed pork).
 
+## Technical Decisions 
 
-## Development process
+We opted for Flutter for TakboBEE due to our familiarity with it from our coursework. Its cross-platform capabilities ensured a seamless gaming experience across various devices, from smartphones to tablets.
+
+### Development process
 
 During the development process, we utilized various tools and resources to create the game:
 
@@ -46,9 +49,3 @@ During the development process, we utilized various tools and resources to creat
 - We utilized a image-to-pixel art generation tool called [Pixelicious](https://www.pixelicious.xyz/)
 - Brainstorming and planning were done on [Discord](https://www.discord.com/) and [Messenger](https://www.messenger.com/).
 - We downloaded free sound effects and background music from the internet.
-
-
-## Technical Decisions 
-
-### Platform Selection
-The game was developed for both ios and android, allowing players to enjoy it on various devices including smartphones and tablets.
