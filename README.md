@@ -4,6 +4,8 @@
 
 "TakboBee" is a fun endless runner game made with Flutter. Guide Jollibee, dodge obstacles, and collect yumburgers along the way. With easy controls and colorful graphics, it's perfect for everyone. Get ready for quick, addictive fun on your mobile!
 
+by Hernani Domingo, Bea Rizza Conag, Justin Gerald Loleng, and Allen James Alvaro
+
 
 # DOCUMENTATION
 
