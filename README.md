@@ -14,25 +14,22 @@ This project details the design, development process, and technical decisions ho
 
 ## Design
 
-wip
-
-
-## Visual and Audio
+### Visual and Audio
 
 TakboBee features a colorful background inspired by Jollibee's iconic buildings. We incorporated a catchy theme song from Jollibee and added sound effects to enhance the player's enjoyment of the game.
 
 
-## Theme Selection
+### Theme Selection
 
 We chose Jollibee as the theme for TakboBee because it creates a nostalgic connection for Filipinos. Many Filipinos associate Jollibee with cherished childhood memories and milestones, reminding them of good times spent with family and friends. The Jollibee icon is deeply ingrained in Filipino culture, symbolizing joy, happiness, and togetherness.
 
 
-## Mechanics
+### Mechanics
 
 TakboBee's mechanic was chosen to feature Jollibee-themed gameplay because it's easy for players of all ages to enjoy. This simple mechanic allows anyone to play without the confusion of different levels. Players can continue playing as long as they can achieve a score each time. This mechanic is well-suited for mobile devices, enabling players to have fun on-the-go. It also aligns with Jollibee's energetic personality, as players guide Jollibee through various challenges, collecting food while dodging enemies and obstacles. Be careful, as some obstacles can cause Jollibee to drop the food you've collected in this endless journey. Control Jollibee's movement with a simple tap or click of the screen.
 
 
-## Filipino Elements
+### Filipino Elements
 
 Jollibee is the friendly mascot and it becomes a symbol of Filipino positivity and joy it shows Filipino spirit of hospitality.  Bees are known as a hard work and have unity this qualities that reflect Filipino values like having determination and generosity. Jollibee menu also offers a mix of Filipino flavors and international favorites, catering to the diverse tastes of Filipino consumers Alongside classics like burgers and fries, you'll find Filipino-inspired dishes like Chickenjoy (fried chicken), Jolly Spaghetti (sweet-style spaghetti), and palabok(garlic sauce and sauteed pork).
 
